@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>     
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">                
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Noticias</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>        
+    </header>
+    <div>
+        <div id="searchInput">
+            <form>
+                <input type="text" placeholder="Buscar uma cidade" id="search">
+                <button id="buttonSearch">Pesquisar</button>
+            </form>
+
+        </div>
+        <div id="content">            
+            <img src="https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png" id="weatherIcon" alt="weather">            
+            <div id="contentInformation">                
+                <p id="cityContent">Cidade</p>
+                <p id="temperatureContent">0°C</p>
+                <p id="humidity">0%</p>
+                <p id="speed">km/h</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>

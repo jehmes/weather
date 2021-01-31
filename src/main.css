@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(215, 232, 235);
+}
+
+.logo {
+    position: absolute;
+    background-color: rgba(97, 135, 241, 0.5);
+    border-bottom: solid 4px rgb(0, 132, 255);
+    width: 100%;
+    height: 80px;
+    
+}
+
+.menu-toggle {
+    position: sticky;
+    float: left;
+    left: 585px;
+    margin-top: 30px;
+    display: none;
+}
+
+@media (max-width: 657px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.menu {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    text-align: center;
+}
+
+@media (max-width: 659px) {
+    .menu {
+        display: none;
+    }
+}
+
+.menu li {
+    display: inline-block;
+    width: 85px;
+    font-size: 24px;
+}
+
+.menu a {
+    color: #fff;
+    font-family: 'Oswald';
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a.selected {
+    background-color: rgb(0, 132, 255);
+    padding: 13px;
+    color: black;
+    font-size: 23px;
+
+}
+
+@media (max-width: 830px) {
+    .autenticacao {
+        display: none;
+    }
+}
+
+.autenticacao {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+
+}
+
+.autenticacao a {
+    font-family: 'Oswald';
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+
+}
+
+.botao {
+    border-radius: 100px 100px;
+    background-color: rgb(0, 17, 255);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+#content {
+    border-radius: 20px 20px;
+    background-color: rgb(219, 237, 240);
+    box-shadow:5px 5px rgb(146, 142, 142);
+    border: solid 1px black;
+    position: absolute;  
+    top: 200px;
+    left: 10px;
+    width: 250px;
+    height: 200px;
+    font-size: 18px;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    color: rgba(58, 18, 236, 0.63);
+
+}
+
+#search {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 130px;
+    text-align: center;
+    left: 10px;
+    border-radius: 30px 30px;
+}
+
+#buttonSearch {
+    border-radius: 30px 30px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 130px;
+    text-align: center;
+    left: 190px;
+    width: 90px;
+}
+
+#contentInformation {    
+
+text-align: center;
+margin: 0;
+padding: 0;
+align-self: center;
+}
+
+#cityContent {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 97%;
+    height: 20px;
+    top: 20px;
+}
+
+#temperatureContent {
+    font-size: 24px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 97%;
+    height: 40px;
+    bottom: 70px;
+}
+
+#weatherIcon {
+    border-radius: 20px 20px;
+    width: 20%;
+    
+}
+
+#humidity {
+    position: absolute;    
+    border-radius: 20px 20px;
+    left: 30px;
+    bottom: 20px;
+    width: 10%;
+    font-size: 12px;
+}
+
+ #speed {
+    position: absolute;    
+    border-radius: 20px 20px;
+    right: 40px;
+    bottom: 20px;
+    width: 10%;
+    font-size: 12px;
+ }
