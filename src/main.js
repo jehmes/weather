@@ -1,7 +1,20 @@
-const access_key = '4d0b056957bfcccf0690ee0b9bf3c04e'
+//Communication backend API and external API
 const inputSearch = document.getElementById('search')
 const buttonSearch = document.getElementById('buttonSearch')
 
+buttonSearch.onclick = ev => {
+    
+    ev.preventDefault()
+
+const url =`http://localhost:4567/city/?query=${inputSearch.value}`
+fetch(url)
+.then(resp => resp.json())
+.then(data => {
+    informations(data)
+    })
+}
+
+//Changing elements on page
 const informations = data => {
     const city = document.getElementById('cityContent')
     const temperature = document.getElementById('temperatureContent')
@@ -33,24 +46,24 @@ const informations = data => {
 }
 
 
-buttonSearch.onclick = ev => {
+// buttonSearch.onclick = ev => {
 
-    ev.preventDefault()
-    const query = inputSearch.value
-    const options = {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'default'
-    }
+//     ev.preventDefault()
+//     const query = inputSearch.value
+//     const options = {
+//         method: 'GET',
+//         mode: 'cors',
+//         cache: 'default'
+//     }
 
-    fetch(`http://api.weatherstack.com/current?access_key=${access_key}&query=${query}`, options)
-        .then(res => {
-            res.json()
-                .then(data => informations(data))
-        })
-        .catch(e => console.log(e))
+//     fetch(`http://api.weatherstack.com/current?access_key=${access_key}&query=${query}`, options)
+//         .then(res => {
+//             res.json()
+//                 .then(data => informations(data))
+//         })
+//         .catch(e => console.log(e))
 
-}
+// }
 
 //Marcar o menu de acordo com os #
 
