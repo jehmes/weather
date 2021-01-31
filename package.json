@@ -1,0 +1,27 @@
+{
+  "name": "project_weather",
+  "version": "1.0.0",
+  "description": "Aplicação consumindo API interna e externa. Informa uma cidade e retorna: temperatura, umidade, velocidade do vento",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jehmes/weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jehmes/weather/issues"
+  },
+  "homepage": "https://github.com/jehmes/weather#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cor": "0.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
