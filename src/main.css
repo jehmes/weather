@@ -181,3 +181,18 @@ align-self: center;
     width: 10%;
     font-size: 12px;
  }
+
+ #table {
+     margin: 0;
+     padding: 0;
+     border-radius: 20px 20px;
+     border: solid 2px cornflowerblue;
+     position: absolute;
+     left: 400px;
+     top: 100px;
+     text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+    
+    
+ }

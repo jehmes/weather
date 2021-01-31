@@ -10,13 +10,6 @@ app.use(cors())
 
 const access_key = '4d0b056957bfcccf0690ee0b9bf3c04e'
 
-
-app.get('/', async (req, res) => {
-  const { data } = await axios(`http://api.weatherstack.com/current?access_key=${access_key}&query=${query}`)
-
-  return res.json(data)
-})
-
 app.get('/city', async (req, res) => {  
 
   const lugar = JSON.stringify(req.query.query)
