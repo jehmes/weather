@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+/* Header/Body */
+body {
+    display: grid;
+    grid-template-rows: 15vh 80vh;
+    grid-template-areas: "cabecalho" "main-body";
+}
+
+.cabecalho {grid-area: "cabecalho"; background-color: cadetblue;}
+.main-body {grid-area: "main-body"; background-color:black}
+
+/* Header */
+.cabecalho {display: grid; grid-template-areas: "logo"; align-items: center;}
+
+/* Menu Header */
+.logo{grid-area: "logo"; display: grid; grid-template-areas: "menu autenticacao"; }
+
+.menu {grid-area: "menu"; margin-bottom: 10px;}
+.autenticacao {grid-area: "autenticacao";position: relative; background-color: darkgoldenrod;}
+
+@media (max-width: 659px) {
+    .menu {
+        display: none;
+    }
+}
+
+/* Body Content */
+.main-body {display: grid; grid-template-areas: "searchInput" "content table-content"; 
+    grid-template-columns: 1fr .8fr 2fr;
+}
+#searchInput{grid-area: "searchInput"; }
+#content{grid-area: "content"; }
+#table-content{grid-area: "table-content"; }
+
+/* Modifying each */
+.cabecalho nav li {
+    display: inline-block;   
+    
+}
+
+.cabecalho nav ul {
+    display: block;
+   
+} 
+
+.cabecalho nav a {
+    border: solid 4px blue;
+    padding: 30px;    
+} 
+
+.autenticacao a {
+    position: relative;
+    left: 630px;
+    top: 14px;
+    padding: 30px;
+    
+    
+}
+
+
+
+
+
+
+
+

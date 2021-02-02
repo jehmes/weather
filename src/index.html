@@ -4,45 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>     
-
-    <link rel="stylesheet" href="main.css">
-
+    <link rel="stylesheet" href="main.css">    
 </head>
 
 <body>
     <header class="cabecalho">
-        <div class="logo">
-            <a href="#inicio">                
-            </a>
+        <div class="logo"> 
+           
+            <nav class="menu">                
+                <ul>
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+                    <li>
+                        <a href="#cursos">Noticias</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="autenticacao">
+                <a href="#login">Login</a>
+                <a href="#registar" class="botao destaque">Registrar</a>
+            </aside>           
         </div>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Noticias</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
-        </aside>        
+              
     </header>
-    <div>
+    <div class="main-body">
         <div id="searchInput">
             <form>
-                <input type="text" placeholder="Buscar uma cidade" id="search">
+                <input type="text" placeholder="Buscar uma cidade" id="search" autocomplete="off">
                 <button id="buttonSearch">Pesquisar</button>
             </form>
 
@@ -56,7 +51,7 @@
                 <p id="speed">km/h</p>
             </div>
         </div>
-        <div>
+        <div id="table-content">
             <table id="table">            
                 <tr id="columns">     
                     <td>ID</td>           
@@ -67,8 +62,7 @@
                     <td>Data da pesquisa</td>
                 </tr>                
             </table>
-        </div>
-
+        </div>        
     </div>
 
 </body>
