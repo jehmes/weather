@@ -6,22 +6,36 @@ const table = document.getElementById('table')
 renderTable()
 
 buttonSearch.onclick = ev => {
-    //Fields treatment 
-    if (!inputSearch.value) {
+
+    ev.preventDefault()
+
+    //Search treatment 
+    const inputValue = inputSearch.value
+    const regex = /[@!#$%^&*¨()\\`´{}^~,.;?'":;<>|_=+-[\]\/0-9]/g
+    //1ºSpecials caracteres
+    if (!inputValue) {
         alert("Preencha o campo")
         return
     }
-    ev.preventDefault()
+    //2ºEmpity search
+    if (regex.test(inputValue) || inputValue.length < 3) {
+        alert("Campo inválido")
+        return
+    }
+    //3ºMany clicks
+    buttonSearch.disabled = true
+    setTimeout(function () {
+        buttonSearch.disabled = false
+    }, 1500)
 
     //Verify if localStorage/dataStorage is empity. If doesn't get the last element id and set id + 1. If does set id = 1
     let dataStorage = JSON.parse(localStorage.getItem('weatherInformation')) || []
     if (dataStorage.length == 0) {
         this.idGen = 1
-    }
-    else this.idGen = JSON.parse(localStorage.getItem('weatherInformation')).pop().id + 1
+    } else this.idGen = JSON.parse(localStorage.getItem('weatherInformation')).pop().id + 1
 
     //Consuming back-end API 
-    const url = `http://localhost:4567/city/?query=${inputSearch.value}`
+    const url = `http://localhost:4567/city/?query=${inputSearch.value}`        //.catch(alert('Houve algum problema com o servidor'))
     fetch(url)
         .then(resp => resp.json())
         .then(data => {
@@ -31,13 +45,22 @@ buttonSearch.onclick = ev => {
                 temperature: data.current.temperature,
                 humidity: data.current.humidity,
                 airSpeed: data.current.wind_speed,
-                date: new Date().toLocaleString('pt-BR', { month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
+                date: new Date().toLocaleString('pt-BR', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric'
+                }),
                 weather: data.current.weather_icons
-            }            
+            }
+            
             //Update the card and save at localStorage
             informations(obj)
-            //Quando pesquisa, inseri no html a cidade pesquisada
+
+            //When search the city, insert in HTML the city
             addInformation(obj)
+        }).catch(() => {
+            alert('Erro de conexão com o servidor')
         })
 }
 
@@ -79,6 +102,7 @@ const informations = data => {
     let dataStorage = JSON.parse(localStorage.getItem('weatherInformation')) || []
     dataStorage.push(weatherInformation)
     localStorage.setItem('weatherInformation', JSON.stringify(dataStorage))
+    this.contidtion = true
 }
 
 //Create the table in HTML
@@ -104,6 +128,7 @@ table.onclick = e => {
     }
 
 }
+
 function removeItemLocalStorage(data) {
     let dataStorage = JSON.parse(localStorage.getItem('weatherInformation')) || []
     const idComparasion = data[0].textContent
