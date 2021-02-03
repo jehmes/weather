@@ -1,2 +1,3 @@
 # weather
-Aplicação consumindo API interna e externa. Informa uma cidade e retorna: temperatura, umidade, velocidade do vento
+Aplicação consumindo API interna e externa, usando apenas javascript, HTML e CSS puro. 
+Informa uma cidade e retorna algumas informações relevantes: temperatura, umidade, velocidade do vento.
